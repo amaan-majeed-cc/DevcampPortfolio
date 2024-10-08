@@ -22,3 +22,14 @@ end
     body: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam laudantium ea, delectus odit sapiente consectetur laboriosam hic cupiditate itaque adipisci explicabo animi ratione consequuntur voluptatum exercitationem dolorum ex voluptatibus in!"
   )
 end
+
+
+9.times do |portfolio_item|
+  Portfolio.create!(
+    title: "Portfolio Title ##{portfolio_item}",
+    subtitle: "Portfolio Subtitle",
+    body: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam laudantium ea, delectus odit sapiente consectetur laboriosam hic cupiditate itaque adipisci explicabo animi ratione consequuntur voluptatum exercitationem dolorum ex voluptatibus in!",
+    main_image: "https://www.placehold.it/300x200",
+    thumb_image: "https://www.placehold.it/300x200"
+  )
+end
