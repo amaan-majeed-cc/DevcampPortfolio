@@ -11,8 +11,9 @@
     <p><%= portfolio_item.body %></p>
     
     <%= image_tag portfolio_item.thumb_image ? portfolio_item.thumb_image : "https://www.placeholder.com/100x100" %>
-    <p>
-      <%= link_to "Show this Item", edit_portfolio_path(portfolio_item.id) %>
-    </p>
+    <p><%= link_to "Show this Item", edit_portfolio_path(portfolio_item.id) %></p>
+
+    
+    <%= button_to "Destroy this blog", portfolio_item, :method => :delete  %>
 
 <% end %>
