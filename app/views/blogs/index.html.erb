@@ -3,6 +3,7 @@
 <% content_for :title, "Blogs" %>
 
 <h1>Blogs</h1>
+<%= link_to "New blog", new_blog_path %>
 
 <div id="blogs">
   <% @blogs.each do |blog| %>
@@ -10,7 +11,7 @@
     <p>
       <%= link_to "Show this blog", blog %>
     </p>
+    <p><%= link_to blog.status, toggle_status_blog_path(blog)  %></p>
   <% end %> 
 </div>
 
-<%= link_to "New blog", new_blog_path %>
