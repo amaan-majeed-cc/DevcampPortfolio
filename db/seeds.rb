@@ -7,3 +7,18 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+
+
+10.times do |skill|
+  Skill.create!(
+    title: "Ruby #{skill}",
+    percent_utilized: 55
+  )
+end
+
+5.times do |blog|
+  Blog.create!(
+    title: "My Blog Number #{blog}",
+    body: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam laudantium ea, delectus odit sapiente consectetur laboriosam hic cupiditate itaque adipisci explicabo animi ratione consequuntur voluptatum exercitationem dolorum ex voluptatibus in!"
+  )
+end
