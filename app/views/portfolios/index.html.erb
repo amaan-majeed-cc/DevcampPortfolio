@@ -3,9 +3,10 @@
 <%# <a href="portfolios/new">Create New Portfolio Item</a> %>
 
 <%= link_to "Create New Portfolio Item", new_portfolio_path%>
+<br>
 
 <% @portfolio_items.each do |portfolio_item| %>
-    <p><%= portfolio_item.title %></p>
+    <p><%= link_to portfolio_item.title, portfolio_item %></p>
     <p><%= portfolio_item.subtitle %></p>
     <p><%= portfolio_item.body %></p>
     
