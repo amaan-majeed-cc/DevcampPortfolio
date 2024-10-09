@@ -1,13 +1,8 @@
-# This file should ensure the existence of records required to run the application in every environment (production,
-# development, test). The code here should be idempotent so that it can be executed at any point in every environment.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Example:
-#
-#   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
-#     MovieGenre.find_or_create_by!(name: genre_name)
-#   end
-
+[ "Ruby on Rails", "Javascript", "Python" ].each do |topic|
+  Topic.create!(
+    title: topic
+  )
+end
 
 10.times do |skill|
   Skill.create!(
@@ -19,17 +14,26 @@ end
 5.times do |blog|
   Blog.create!(
     title: "My Blog Number #{blog}",
-    body: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam laudantium ea, delectus odit sapiente consectetur laboriosam hic cupiditate itaque adipisci explicabo animi ratione consequuntur voluptatum exercitationem dolorum ex voluptatibus in!"
+    body: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam laudantium ea, delectus odit sapiente consectetur laboriosam hic cupiditate itaque adipisci explicabo animi ratione consequuntur voluptatum exercitationem dolorum ex voluptatibus in!",
+    topic_id: Topic.last.id
   )
 end
 
 
-9.times do |portfolio_item|
+8.times do |portfolio_item|
   Portfolio.create!(
-    title: "Portfolio Title ##{portfolio_item}",
-    subtitle: "Portfolio Subtitle",
+    title: "Portfolio Title #{portfolio_item}",
+    subtitle: "Ruby on Rails",
     body: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam laudantium ea, delectus odit sapiente consectetur laboriosam hic cupiditate itaque adipisci explicabo animi ratione consequuntur voluptatum exercitationem dolorum ex voluptatibus in!",
     main_image: "https://www.placehold.it/300x200",
     thumb_image: "https://www.placehold.it/300x200"
   )
 end
+
+Portfolio.create!(
+  title: "Portfolio Title 11",
+  subtitle: "Angular",
+  body: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam laudantium ea, delectus odit sapiente consectetur laboriosam hic cupiditate itaque adipisci explicabo animi ratione consequuntur voluptatum exercitationem dolorum ex voluptatibus in!",
+  main_image: "https://www.placehold.it/300x200",
+  thumb_image: "https://www.placehold.it/300x200"
+)
