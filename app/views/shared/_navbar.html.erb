@@ -1,0 +1,51 @@
+
+    <nav class="navbar navbar-dark bg-dark navbar-expand-lg px-5">
+      <a class="navbar-brand" href="#">Navbar</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="http://localhost:3000/blogs">Blogs</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="http://localhost:3000/portfolios">Portfolios</a>
+          </li>
+
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+          <% if current_user %> 
+            <%= button_to "Logout", destroy_user_session_path, :method => :delete, class: "btn btn-primary my-2 my-sm-0"%>
+          <% else %>
+            <%= link_to "Register", new_user_registration_path, class: "btn btn-primary m-2 my-sm-0"%>
+
+            <%= link_to "Login", new_user_session_path, class: "btn btn-primary m-2 my-sm-0"%>
+          <% end %>
+          <%# <button class="btn btn-primary my-2 my-sm-0" type="submit">Search</button> %>
+        </form>
+      </div>
+    </nav>
+
+    <%if notice %>
+      <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <%= notice %>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+    <% end %>
+
+    <% if alert %>
+      <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <%= alert %>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+    <% end %>
