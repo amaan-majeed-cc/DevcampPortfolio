@@ -1,0 +1,20 @@
+<%= form_tag(blogs_path) do %>
+  <div class ="form-group">
+    <%= label_tag "blog_title", "Blog Title", id: "blog_title" %>
+    <%= text_field_tag "blog[title]", nil, class: "form-control", placeholder: "Enter email" %>
+  </div>
+
+  <div class ="form-group">
+    <%= label_tag "blog[body]", "Blog", id: "blog_body"%>
+    <%= text_area_tag 'blog[body]', nil, rows: 5, class: "form-control", placeholder: "Blog Post" %>
+  </div>
+
+  <div class="form-group">
+    <%= label_tag "blog[topic_id]", "Topic Number", id: "blog_topic_id" %>
+    <%= number_field_tag "blog[topic_id]", nil, class: "form-control", placeholder: "Topic Reference Number" %>
+  </div>
+
+  <%= submit_tag "Submit", class: "btn btn-primary", value: "Create Blog" %>
+  
+<% end %>
+

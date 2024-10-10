@@ -1,0 +1,2 @@
+class FormController < ApplicationRecord
+end
